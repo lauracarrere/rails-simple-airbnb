@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>RailsSimpleAirbnb</title>
+    <!-- Add these line for detecting device width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +13,14 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand">Air b&b</a>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit">Search</button>
+        <button class="btn btn-outline-primary my-2 my-sm-0 ml-2" type="submit">  <%= link_to 'Add flat', new_flat_path%></button>
+      </form>
+    </nav>
     <%= yield %>
   </body>
 </html>
